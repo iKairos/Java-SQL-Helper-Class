@@ -89,12 +89,13 @@ public class Interface {
 		
 		try {
 			PreparedStatement state = this.conn.prepareStatement(statement);
-			
+			int c = 0;
 			for(int i=0;i<args.length;i++)
 			{
-				for(int j=0;j<args[i].length-1;j++)
+				for(int j=0;j < args[i].length-1;j++)
 				{
-					state.setString(j+1, args[i][j+1]);
+					state.setString(c+1, args[i][1]);
+					c++;
 				}
 			}
 			
